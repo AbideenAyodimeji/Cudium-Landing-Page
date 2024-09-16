@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/ForeignAccount.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faChevronDown, faX } from '@fortawesome/free-solid-svg-icons'
 import {
@@ -12,13 +11,7 @@ import {
   faFacebook,
 } from '@fortawesome/free-brands-svg-icons' // Import the Google Play icon
 
-export default function Home() {
-  const router = useRouter()
-
-  const goToForeignAccountPage = () => {
-    router.push('/ForeignAccount')
-  }
-
+export default function ForeignAccount() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isMenuClosing, setIsMenuClosing] = useState(false) //state for closing animation
 
@@ -53,7 +46,6 @@ export default function Home() {
       mobileMenu.style.display = 'none'
       mobileMenuNone.style.display = 'none'
       header.style.overflow = 'hidden'
-
       setIsMenuClosing(false) // Reset the state
       mobileMenu.classList.remove(styles.mobileMenuOpen) // Clean up the open state
     }, 1000) // This should match the animation duration
@@ -93,12 +85,7 @@ export default function Home() {
                     className={`${styles.servicesIcon} ${styles.whiteColor}`}
                   />
                 </div>
-                <p
-                  className={styles.desktopServiceMenuBlogText}
-                  onClick={goToForeignAccountPage}
-                >
-                  Blog
-                </p>
+                <p className={styles.desktopServiceMenuBlogText}>Blog</p>
                 <p className={styles.desktopServiceMenuHelpText}>Help Center</p>
               </div>
               <div className={styles.navButton}>
@@ -153,12 +140,7 @@ export default function Home() {
                   <li className={`${styles.mobileMenuServiceText}`}>
                     Services
                   </li>
-                  <li
-                    className={`${styles.mobileMenuBlogText}`}
-                    onClick={goToForeignAccountPage}
-                  >
-                    Blog
-                  </li>
+                  <li className={`${styles.mobileMenuBlogText}`}>Blog</li>
                   <li className={`${styles.mobileMenuHelpText}`}>
                     Help Center
                   </li>
@@ -173,11 +155,11 @@ export default function Home() {
             >
               <div>
                 <p className={styles.headerBoldText}>
-                  Enjoy Limitless local and International transaction.
+                  5X faster to open a foreign account than it is anywhere else
                 </p>
                 <p className={styles.headerSubText}>
-                  Don't just hear about the better way to send money. Use the
-                  better way.
+                  Own a foreign account in minutes. One that gives you REAL
+                  control of YOUR money.
                 </p>
 
                 <div className={`${styles.headerButtons} ${styles.flexRow}`}>
@@ -231,54 +213,35 @@ export default function Home() {
               </div>
             </div>
 
-            <div
-              className={`${styles.headerBottomContainer} ${styles.flexColumn} ${styles.desktopHeaderBottomRight}`}
-            >
-              <div
-                className={`${styles.headerBottomLeftContainer} ${styles.desktopHeaderBottomLeftContainer} ${styles.halfRemGap} ${styles.flexColumn} `}
-              >
-                <p
-                  className={`${styles.headerBottomLeftContainerText} ${styles.textAlign}`}
-                >
-                  Transaction Successful👍🏼
-                </p>
-
-                <p
-                  className={`${styles.headerBottomLeftContainerNum} ${styles.alignCenter} ${styles.justifyCenter}`}
-                >
-                  $560.80
-                </p>
-              </div>
-
-              <Image
-                src='/Images/header-img.png'
-                width={300}
-                height={300}
-                className={styles.headerBottomImg}
-              />
-
-              <div
-                className={`${styles.headerBottomRightContainer} ${styles.desktopHeaderBottomRightContainer} ${styles.flexColumn}`}
-              >
+            <div className={`${styles.headerBottom} ${styles.justifyCenter}`}>
+              <div className={styles.headerBottomCircle}>
                 <Image
-                  src='/Images/Image2.svg'
-                  width={25}
-                  height={25}
-                  className={styles.headerbottomImg2}
+                  src='/Images/foreignBritishPoundIcon.svg'
+                  width={50}
+                  height={50}
+                  className={styles.foreignBritishPoundIcon}
                 />
 
-                <div
-                  className={`${styles.headerBottomRightContainerFlexRow} ${styles.alignCenter}`}
-                >
-                  <Image src='/Images/check-icon.svg' width={16} height={16} />
-                  <p className={styles.headerBottomRightBoldText}>
-                    Cash Received
-                  </p>
-                </div>
+                <Image
+                  src='/Images/foreignEuroIcon.svg'
+                  width={50}
+                  height={50}
+                  className={styles.foreignEuroIcon}
+                />
 
-                <p className={styles.headerBottomRightSubText}>
-                  You just received $20 from @tom, ID: 34RTQ7H, Date: 12-02-2022
-                </p>
+                <Image
+                  src='/Images/foreignUsDollarIcon.svg'
+                  width={50}
+                  height={50}
+                  className={styles.foreignUsDollarIcon}
+                />
+
+                <Image
+                  src='/Images/foreignHeaderImg.png'
+                  width={50}
+                  height={50}
+                  className={styles.foreignHeaderImg}
+                />
               </div>
             </div>
           </div>
@@ -289,29 +252,48 @@ export default function Home() {
         <section
           className={`${styles.sectionOne} ${styles.flexColumn}  ${styles.alignCenter}`}
         >
-          <div
-            className={`${styles.desktopSectionOnefiftyVw} ${styles.sectionOneBoxContainer}`}
-          >
-            <Image
-              src='/Images/kuda.svg'
-              width={50}
-              height={50}
-              className={styles.kudaImg}
-            />
-            <Image
-              src='/Images/gtb.svg'
-              width={40}
-              height={40}
-              className={styles.gtbImg}
-            />
-            <Image
-              src='/Images/a.svg'
-              width={50}
-              height={50}
-              className={styles.aImg}
-            />
-
+          <div className={`${styles.desktopSectionOnefiftyVw}`}>
             <div className={styles.sectionOneBox}>
+              <div
+                className={`${styles.flexColumn} ${styles.sectionOneBoxCard}`}
+              >
+                <Image
+                  src='/Images/Image2.svg'
+                  width={30}
+                  height={30}
+                  className={styles.sectionOneBoxCardIcon}
+                />
+                <p className={styles.transactionSuccesful}>
+                  Transaction Successful 👍🏼
+                </p>
+                <p className={styles.sectionOneBoxCardP2}>
+                  We have just sent your money to @deboy
+                </p>
+                <p className={styles.sectionOneBoxCardP3}>
+                  Show transaction details
+                </p>
+              </div>
+
+              <Image
+                src='/Images/foreignSectionIcon1.svg'
+                width={50}
+                height={50}
+                className={styles.foreignSectionIcon1}
+              />
+              <Image
+                src='/Images/foreignSectionIcon3.svg'
+                width={50}
+                height={50}
+                className={styles.foreignSectionIcon3}
+              />
+
+              <Image
+                src='/Images/foreignSectionIcon4.svg'
+                width={80}
+                height={80}
+                className={styles.foreignSectionIcon4}
+              />
+
               <div className={styles.balanceBox}>
                 <p className={styles.balanceText}>Available Balance</p>
                 <div
@@ -336,12 +318,12 @@ export default function Home() {
                   >
                     <div className={`${styles.flexRow} ${styles.alignCenter}`}>
                       <Image
-                        src='/Images/flag.svg'
+                        src='/Images/foreignSectionIcon2.svg'
                         width={13}
                         height={13}
-                        className={styles.nigFlag}
+                        className={styles.usaFlag}
                       />
-                      <p className={styles.ngnText}>NGN</p>
+                      <p className={styles.usdText}>USD</p>
                     </div>
                     <FontAwesomeIcon
                       icon={faChevronDown}
@@ -352,33 +334,21 @@ export default function Home() {
               </div>
 
               <div>
-                <p className={styles.bankAcountText}>Bank Account</p>
-                <div
-                  className={`${styles.spaceBetween} ${styles.selectBankBox} ${styles.alignCenter}`}
-                >
-                  <p className={styles.selectBankBoxText}>Select Bank</p>
-                  <FontAwesomeIcon
-                    icon={faChevronDown}
-                    className={styles.ngnIcon}
-                  />
-                </div>
-              </div>
-
-              <div>
-                <p className={styles.accountNumberText}>Account Number</p>
-                <div className={styles.enterAccount}>
-                  <p className={styles.enterAccountText}>
-                    Enter account number
+                <p className={styles.recipientEmailText}>
+                  Recipient Email or Uer ID
+                </p>
+                <div className={styles.enterEmail}>
+                  <p className={styles.enterEmailText}>
+                    Enter recipient email or username
                   </p>
                 </div>
               </div>
 
-              <Image
-                src='/Images/desktopCard.png'
-                width={150}
-                height={80}
-                className={styles.desktopCard}
-              />
+              <button
+                className={`${styles.nextButton} ${styles.justifyCenter}`}
+              >
+                <p>Next</p>
+              </button>
             </div>
           </div>
 
@@ -388,10 +358,10 @@ export default function Home() {
             <p
               className={`${styles.sectionOneDescBoldText} ${styles.blackColor}`}
             >
-              Withdraw your money to any local bank
+              Send and Receive Money Overseas Instantly
             </p>
             <p className={styles.sectionOneDescLightText}>
-              Send more with lesser charge. The era of hidden charges is over.
+              Send, Receive funds and pay for your education abroad at once.
             </p>
           </div>
 
@@ -399,117 +369,120 @@ export default function Home() {
             className={`${styles.circleDesc} ${styles.flexColumn} ${styles.desktopSectionOnefiftyVw}`}
           >
             <p className={`${styles.circleDescBoldText} ${styles.blackColor}`}>
-              Transact in three different currencies. For Now.
+              Escape a black hole of fees and charges
             </p>
             <p className={styles.circleDescLightText}>
-              Transfer and withdraw funds in Dollar, GBP and pounds. More to be
-              added soon
+              An incredibly useful tool for your business and personal needs
+              without running outrageous charges.
             </p>
           </div>
 
           <div
-            className={`${styles.circleContainer} ${styles.justifyCenter} ${styles.fiftyVw}`}
+            className={`${styles.sendCashBox}  ${styles.desktopSectionOnefiftyVw}`}
           >
-            <div
-              className={`${styles.bigCircle} ${styles.justifyCenter} ${styles.alignCenter}`}
-            >
-              <div
-                className={`${styles.mediumCircle} ${styles.justifyCenter} ${styles.alignCenter}`}
-              >
-                <div className={styles.smallCircle}>
-                  <Image
-                    src='/Images/Us-Dollar.svg'
-                    width={40}
-                    height={40}
-                    className={styles.usDollarSvg}
-                  />
-                  <Image
-                    src='/Images/Euro-Icon.svg'
-                    width={35}
-                    height={35}
-                    className={styles.euroIconSvg}
-                  />
-                  <Image
-                    src='/Images/Pound-Icon.svg'
-                    width={30}
-                    height={30}
-                    className={styles.poundIconSvg}
+            <Image
+              src='/Images/Line.png'
+              width={50}
+              height={50}
+              className={styles.LineImg}
+            />
+
+            <Image
+              src='/Images/feePercentage.svg'
+              width={50}
+              height={50}
+              className={styles.feePercentage}
+            />
+
+            <div className={styles.sendCashBoxCard}>
+              <p className={styles.sendCashText}>Send Cash</p>
+              <div className={styles.sendCashAmountBox}>
+                <p className={styles.sendCashAmountText}>Amount</p>
+                <div className={`${styles.flexRow} ${styles.boxes}`}>
+                  <div className={styles.sendCashCardAmountContainer}>
+                    <p className={styles.sendCashAmountContainerFig}>₦5000</p>
+                  </div>
+
+                  <div
+                    className={`${styles.sendCashCardNgnBox} ${styles.alignCenter} ${styles.spaceBetween}`}
+                  >
+                    <div className={`${styles.flexRow} ${styles.alignCenter}`}>
+                      <Image
+                        src='/Images/foreignSectionIcon2.svg'
+                        width={13}
+                        height={13}
+                        className={styles.usaFlag}
+                      />
+                      <p className={styles.usdText}>USD</p>
+                    </div>
+
+                    <FontAwesomeIcon
+                      icon={faChevronDown}
+                      className={styles.ngnIcon}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <p className={styles.sendCashBoxCardP1}>@deboy</p>
+              <p className={styles.sendCashBoxCardfig}>$56,000</p>
+            </div>
+
+            <p className={styles.sendCashText}>Send Cash</p>
+
+            <div className={styles.sendCashAmountBox}>
+              <p className={styles.sendCashAmountText}>Amount</p>
+              <div className={`${styles.flexRow} ${styles.boxes}`}>
+                <div className={styles.sendCashAmountContainer}>
+                  <p className={styles.sendCashAmountContainerFig}>₦5000</p>
+                </div>
+
+                <div
+                  className={`${styles.sendCashNgnBox} ${styles.alignCenter} ${styles.spaceBetween}`}
+                >
+                  <div className={`${styles.flexRow} ${styles.alignCenter}`}>
+                    <Image
+                      src='/Images/foreignSectionIcon2.svg'
+                      width={13}
+                      height={13}
+                      className={styles.usaFlag}
+                    />
+                    <p className={styles.usdText}>USD</p>
+                  </div>
+
+                  <FontAwesomeIcon
+                    icon={faChevronDown}
+                    className={styles.ngnIcon}
                   />
                 </div>
               </div>
             </div>
+
+            <div>
+              <p className={styles.sendCashRecipientEmailText}>
+                Recipient Email or Uer ID
+              </p>
+              <div className={styles.sendCashEnterEmail}>
+                <p className={styles.enterEmailText}>
+                  Enter recipient email or username
+                </p>
+              </div>
+            </div>
+
+            <button
+              className={`${styles.sendCashNextButton} ${styles.justifyCenter}`}
+            >
+              <p>Send</p>
+            </button>
           </div>
 
-          <div
-            className={`${styles.container3} ${styles.flexColumn} ${styles.fiftyVw}`}
-          >
+          <div className={`${styles.container3}`}>
             <Image
-              src='/Images/image2.svg'
-              width={55}
-              height={55}
-              className={styles.image2}
+              src='/Images/sectionOneAmount.svg'
+              width={400}
+              height={200}
+              className={styles.container3Img}
             />
-
-            <Image
-              src='/Images/checkmark.svg'
-              width={80}
-              height={80}
-              className={styles.checkmark}
-            />
-
-            <div
-              className={`${styles.container3Elem1} ${styles.flexRow} ${styles.spaceBetween}`}
-            >
-              <div className={`${styles.smallGap} ${styles.flexColumn}`}>
-                <p className={styles.container3BoldText}>
-                  United state Dollar ($)
-                </p>
-                <p className={styles.container3LightText}>$ 0. 00</p>
-              </div>
-
-              <div>
-                <Image
-                  src='/Images/dollar-background.png'
-                  width={30}
-                  height={30}
-                />
-              </div>
-            </div>
-            <div
-              className={`${styles.container3Elem2} ${styles.flexRow} ${styles.spaceBetween}`}
-            >
-              <div className={`${styles.smallGap} ${styles.flexColumn}`}>
-                <p className={styles.container3BoldText}>
-                  United state Dollar ($)
-                </p>
-                <p className={styles.container3LightText}>$ 0. 00</p>
-              </div>
-              <div>
-                <Image
-                  src='/Images/euro-background.png'
-                  width={30}
-                  height={30}
-                />
-              </div>
-            </div>
-            <div
-              className={`${styles.container3Elem3} ${styles.flexRow} ${styles.spaceBetween}`}
-            >
-              <div className={`${styles.smallGap} ${styles.flexColumn}`}>
-                <p className={styles.container3BoldText}>
-                  United state Dollar ($)
-                </p>
-                <p className={styles.container3LightText}>$ 0. 00</p>
-              </div>
-
-              <div>
-                <Image
-                  src='/Images/pound-background.png'
-                  width={30}
-                  height={30}
-                />
-              </div>
-            </div>
           </div>
 
           <div
@@ -518,11 +491,11 @@ export default function Home() {
             <p
               className={`${styles.container3DescBoldText} ${styles.blackColor}`}
             >
-              Your money is definitely safe with us.
+              Pay for goods & services in your choice currency.
             </p>
             <p className={styles.container3DescLightText}>
-              With multi-factor authentication, your money goes only where YOU
-              want it to go
+              You can Shop, pay for Ads and lots more in whatever currency you
+              choose.
             </p>
           </div>
         </section>
@@ -557,7 +530,7 @@ export default function Home() {
               </div>
 
               <div
-                className={`${styles.flexColumn} ${styles.smallGap} ${styles.desktopSectionTwoBottomFlexColumnTexts}`}
+                className={`${styles.flexColumn} ${styles.smallGap} ${styles.desktopSectionTwoBottomFlexColumnTexts} `}
               >
                 <p className={styles.sectionTwoBottomBoldText}>
                   Register with Us
@@ -621,6 +594,7 @@ export default function Home() {
             height={30}
             className={styles.topFrame}
           />
+
           <p className={styles.sectionThreeBoldText}>
             Download your Cudium app Now
           </p>
@@ -671,7 +645,6 @@ export default function Home() {
               </div>
             </button>
           </div>
-
           <Image
             src='/Images/Frame.png'
             width={30}
@@ -687,9 +660,7 @@ export default function Home() {
             <div className={`${styles.footerTopGap} ${styles.flexColumn}`}>
               <div className={`${styles.blogGap} ${styles.flexRow}`}>
                 <h3 className={styles.h3}>How it Works</h3>
-                <h3 className={styles.h3} onClick={goToForeignAccountPage}>
-                  Blog
-                </h3>
+                <h3 className={styles.h3}>Blog</h3>
               </div>
 
               <h3 className={styles.h3}>FAQs & Help</h3>
@@ -810,9 +781,7 @@ export default function Home() {
             <div
               className={`${styles.flexColumn} ${styles.desktopFooterColumntwentyFiveVw}`}
             >
-              <h3 className={styles.h3} onClick={goToForeignAccountPage}>
-                Blog
-              </h3>
+              <h3 className={styles.h3}>Blog</h3>
 
               <div className={`${styles.contactList} ${styles.flexColumn}`}>
                 <h3 className={styles.h3}>Contact</h3>
