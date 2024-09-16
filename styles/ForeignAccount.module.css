@@ -258,7 +258,7 @@
   color: #f6f8fc;
   font-weight: 600;
   font-size: 1.5rem;
-  padding: 1rem 0 0 0;
+  padding: 1rem 5rem 0 0;
 }
 
 .headerSubText {
@@ -266,7 +266,7 @@
   font-weight: 300;
   font-size: 0.8rem;
   margin-top: 0.7rem;
-  padding-right: 6rem;
+  padding-right: 8rem;
 }
 
 .headerButtons {
@@ -662,6 +662,11 @@
   margin: 4rem 0 0;
   padding: 3rem 3rem 3rem 2rem;
   gap: 2.5rem;
+}
+
+.uLine,
+.nLine {
+  display: none;
 }
 
 .sectionTwoTopBoldText {
@@ -1220,6 +1225,46 @@
   /* **************************** footer tablet design end********************** */
 }
 
+@media only screen and (min-width: 768px) {
+  .desktopServiceMenu {
+    display: flex;
+  }
+
+  .desktopServiceMenuServiceText {
+    font-weight: 600;
+    font-size: 1.3rem;
+  }
+
+  .navButton {
+    display: flex;
+  }
+
+  .serviceIcon {
+    margin: 0.3rem 0 0 0.3rem;
+  }
+
+  .desktopServiceMenuBlogText,
+  .desktopServiceMenuHelpText {
+    font-weight: 600;
+    font-size: 1.3rem;
+  }
+
+  .navButtonText {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem 1rem;
+  }
+
+  .mobileIcons {
+    display: none;
+  }
+
+  .headerBoldText,
+  .headerSubText {
+    padding-right: 20vw;
+  }
+}
+
 /* ********************************* desktop design ****************** */
 @media only screen and (min-width: 992px) {
   .mobileMenuNone {
@@ -1477,7 +1522,7 @@
     background-color: #f6f8fc;
     padding: 1rem 1rem 1rem;
     border-radius: 0.5rem;
-    z-index: 9;
+    z-index: 0;
   }
 
   .sendCashCardAmountContainer {
@@ -1504,6 +1549,16 @@
     text-align: center;
     color: #94a3b8;
     font-size: 1rem;
+  }
+
+  .sendCashBoxCardP2 {
+    color: #f5abab;
+    font-size: 0.8rem;
+    text-align: center;
+    background-color: #27ae601a;
+    margin: 1rem 0 0 0;
+    padding: 0.7rem 0rem 0.8rem;
+    border-radius: 1rem;
   }
 
   .sendCashBoxCardfig {
@@ -1600,6 +1655,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    /* background-color: red; */
   }
 
   .sectionTwoBottomBoldText {
@@ -1613,7 +1669,24 @@
   }
 
   .desktopSectionTwoBottomFlexColumnTexts {
-    padding: 0 4rem;
+    padding: 0 2rem;
+  }
+
+  .uLine,
+  .nLine {
+    display: none;
+    width: 50vw;
+    height: 9vh;
+    position: absolute;
+  }
+
+  .uLine {
+    right: -1.5vw;
+    top: 3vh;
+  }
+
+  .nLine {
+    top: -4vh;
   }
 
   .desktopSectionTwoBottomFlexRow {
@@ -1622,6 +1695,8 @@
 
   .sectionTwoBottom {
     flex-direction: row;
+    position: relative;
+    margin: 0 7rem 0 7rem;
   }
   /* ********************************** Section Two *************************** */
 

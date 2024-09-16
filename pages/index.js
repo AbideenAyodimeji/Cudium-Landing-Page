@@ -42,6 +42,7 @@ export default function Home() {
     mobileMenuNone.style.display = 'flex'
     mobileMenuNone.style.height = '100vh'
     header.style.overflow = 'visible'
+    body.style.position = 'fixed'
   }
 
   const handleNavXIcon = () => {
@@ -53,7 +54,7 @@ export default function Home() {
       mobileMenu.style.display = 'none'
       mobileMenuNone.style.display = 'none'
       header.style.overflow = 'hidden'
-
+      body.style.position = 'relative'
       setIsMenuClosing(false) // Reset the state
       mobileMenu.classList.remove(styles.mobileMenuOpen) // Clean up the open state
     }, 1000) // This should match the animation duration

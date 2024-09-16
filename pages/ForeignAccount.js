@@ -35,6 +35,7 @@ export default function ForeignAccount() {
     mobileMenuNone.style.display = 'flex'
     mobileMenuNone.style.height = '100vh'
     header.style.overflow = 'visible'
+    body.style.position = 'fixed'
   }
 
   const handleNavXIcon = () => {
@@ -46,6 +47,7 @@ export default function ForeignAccount() {
       mobileMenu.style.display = 'none'
       mobileMenuNone.style.display = 'none'
       header.style.overflow = 'hidden'
+      body.style.position = 'relative'
       setIsMenuClosing(false) // Reset the state
       mobileMenu.classList.remove(styles.mobileMenuOpen) // Clean up the open state
     }, 1000) // This should match the animation duration
@@ -71,6 +73,7 @@ export default function ForeignAccount() {
                   Cudium
                 </p>
               </div>
+
               <div
                 className={`${styles.desktopServiceMenu} ${styles.alignCenter} ${styles.spaceAround} ${styles.twoRemGap} `}
               >
@@ -88,6 +91,7 @@ export default function ForeignAccount() {
                 <p className={styles.desktopServiceMenuBlogText}>Blog</p>
                 <p className={styles.desktopServiceMenuHelpText}>Help Center</p>
               </div>
+
               <div className={styles.navButton}>
                 <button
                   className={`${styles.navButtonText} ${styles.whiteColor}`}
@@ -426,6 +430,7 @@ export default function ForeignAccount() {
 
               <p className={styles.sendCashBoxCardP1}>@deboy</p>
               <p className={styles.sendCashBoxCardfig}>$56,000</p>
+              <p className={styles.sendCashBoxCardP2}>Amount Received</p>
             </div>
 
             <p className={styles.sendCashText}>Send Cash</p>
@@ -542,6 +547,13 @@ export default function ForeignAccount() {
               </div>
             </div>
 
+            <Image
+              src='/Images/nLine.svg'
+              width={100}
+              height={50}
+              className={styles.nLine}
+            />
+
             <div
               className={`${styles.flexRow} ${styles.alignCenter} ${styles.oneRemGap} ${styles.desktopSectionTwoBottomFlexColumn}`}
             >
@@ -560,6 +572,13 @@ export default function ForeignAccount() {
                 </p>
               </div>
             </div>
+
+            <Image
+              src='/Images/uLine.svg'
+              width={100}
+              height={50}
+              className={styles.uLine}
+            />
 
             <div
               className={`${styles.flexRow} ${styles.alignCenter} ${styles.oneRemGap} ${styles.desktopSectionTwoBottomFlexColumn}`}
