@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/transferCash.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faChevronDown, faX } from '@fortawesome/free-solid-svg-icons'
 import {
@@ -12,7 +12,7 @@ import {
   faFacebook,
 } from '@fortawesome/free-brands-svg-icons' // Import the Google Play icon
 
-export default function Home() {
+export default function transferCash() {
   const router = useRouter()
 
   const goToForeignAccountPage = () => {
