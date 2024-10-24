@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 import Image from 'next/image'
 import styles from '../styles/ForeignAccount.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -12,6 +13,12 @@ import {
 } from '@fortawesome/free-brands-svg-icons' // Import the Google Play icon
 
 export default function ForeignAccount() {
+  // navigating to transferCashPage
+  const router = useRouter()
+  const goToTransferCashPage = () => {
+    router.push('/')
+  }
+
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isMenuClosing, setIsMenuClosing] = useState(false) //state for closing animation
 
@@ -78,15 +85,24 @@ export default function ForeignAccount() {
                 className={`${styles.desktopServiceMenu} ${styles.alignCenter} ${styles.spaceAround} ${styles.twoRemGap} `}
               >
                 <div
-                  className={`${styles.flexRow} ${styles.alignCenter} ${styles.smallGap}`}
+                  className={`${styles.flexRow} ${styles.alignCenter} ${styles.smallGap} ${styles.dropdown} `}
                 >
-                  <p className={styles.desktopServiceMenuServiceText}>
-                    Services
-                  </p>
-                  <FontAwesomeIcon
-                    icon={faChevronDown}
-                    className={`${styles.servicesIcon} ${styles.whiteColor}`}
-                  />
+                  <div
+                    className={`${styles.dropBtn} ${styles.smallGap} ${styles.alignCenter}`}
+                  >
+                    <p className={styles.desktopServiceMenuServiceText}>
+                      Services
+                    </p>
+
+                    <FontAwesomeIcon
+                      icon={faChevronDown}
+                      className={`${styles.servicesIcon} ${styles.whiteColor}`}
+                    />
+                  </div>
+
+                  <div className={styles.dropdownContent}>
+                    <p onClick={goToTransferCashPage}>Transfer Cash</p>
+                  </div>
                 </div>
                 <p className={styles.desktopServiceMenuBlogText}>Blog</p>
                 <p className={styles.desktopServiceMenuHelpText}>Help Center</p>
@@ -218,35 +234,12 @@ export default function ForeignAccount() {
             </div>
 
             <div className={`${styles.headerBottom} ${styles.justifyCenter}`}>
-              <div className={styles.headerBottomCircle}>
-                <Image
-                  src='/Images/foreignBritishPoundIcon.svg'
-                  width={50}
-                  height={50}
-                  className={styles.foreignBritishPoundIcon}
-                />
-
-                <Image
-                  src='/Images/foreignEuroIcon.svg'
-                  width={50}
-                  height={50}
-                  className={styles.foreignEuroIcon}
-                />
-
-                <Image
-                  src='/Images/foreignUsDollarIcon.svg'
-                  width={50}
-                  height={50}
-                  className={styles.foreignUsDollarIcon}
-                />
-
-                <Image
-                  src='/Images/foreignHeaderImg.png'
-                  width={50}
-                  height={50}
-                  className={styles.foreignHeaderImg}
-                />
-              </div>
+              <Image
+                src='/Images/foreignAcctHeaderImg.svg'
+                width={50}
+                height={50}
+                className={styles.foreignAcctHeaderImg}
+              />
             </div>
           </div>
         </header>
@@ -284,6 +277,7 @@ export default function ForeignAccount() {
                 height={50}
                 className={styles.foreignSectionIcon1}
               />
+
               <Image
                 src='/Images/foreignSectionIcon3.svg'
                 width={50}
@@ -339,7 +333,7 @@ export default function ForeignAccount() {
 
               <div>
                 <p className={styles.recipientEmailText}>
-                  Recipient Email or Uer ID
+                  Recipient Email or User ID
                 </p>
                 <div className={styles.enterEmail}>
                   <p className={styles.enterEmailText}>
@@ -436,10 +430,10 @@ export default function ForeignAccount() {
             <p className={styles.sendCashText}>Send Cash</p>
 
             <div className={styles.sendCashAmountBox}>
-              <p className={styles.sendCashAmountText}>Amount</p>
+              <p className={styles.amountText}>Amount</p>
               <div className={`${styles.flexRow} ${styles.boxes}`}>
                 <div className={styles.sendCashAmountContainer}>
-                  <p className={styles.sendCashAmountContainerFig}>₦5000</p>
+                  <p className={styles.amountContainerFig}>₦5000</p>
                 </div>
 
                 <div
@@ -464,10 +458,10 @@ export default function ForeignAccount() {
             </div>
 
             <div>
-              <p className={styles.sendCashRecipientEmailText}>
-                Recipient Email or Uer ID
+              <p className={styles.recipientEmailText}>
+                Recipient Email or User ID
               </p>
-              <div className={styles.sendCashEnterEmail}>
+              <div className={styles.enterEmail}>
                 <p className={styles.enterEmailText}>
                   Enter recipient email or username
                 </p>
@@ -484,8 +478,8 @@ export default function ForeignAccount() {
           <div className={`${styles.container3}`}>
             <Image
               src='/Images/sectionOneAmount.svg'
-              width={400}
-              height={200}
+              width={50}
+              height={50}
               className={styles.container3Img}
             />
           </div>

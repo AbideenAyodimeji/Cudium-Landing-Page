@@ -12,7 +12,7 @@ import {
   faFacebook,
 } from '@fortawesome/free-brands-svg-icons' // Import the Google Play icon
 
-export default function transferCash() {
+export default function TransferCash() {
   const router = useRouter()
 
   const goToForeignAccountPage = () => {
@@ -62,11 +62,11 @@ export default function transferCash() {
 
   return (
     <>
-      <div id='body'>
+      <div id='body' className={styles.body}>
         {/* ****************************** header start **************************************/}
         <header id='header' className={`${styles.header}`}>
           <nav className={`${styles.nav} ${styles.flexColumn}`}>
-            <div className={`${styles.spaceBetween} ${styles.desktopNav}`}>
+            <div className={`${styles.desktopNav} ${styles.spaceBetween} `}>
               <div className={styles.leftNavigation}>
                 <Image
                   src='./Images/cudium-logo.svg'
@@ -80,28 +80,34 @@ export default function transferCash() {
                   Cudium
                 </p>
               </div>
+
               <div
                 className={`${styles.desktopServiceMenu} ${styles.alignCenter} ${styles.spaceAround} ${styles.twoRemGap} `}
               >
                 <div
-                  className={`${styles.flexRow} ${styles.alignCenter} ${styles.smallGap}`}
+                  className={`${styles.flexRow} ${styles.alignCenter} ${styles.smallGap} ${styles.dropdown}`}
                 >
-                  <p className={styles.desktopServiceMenuServiceText}>
-                    Services
-                  </p>
-                  <FontAwesomeIcon
-                    icon={faChevronDown}
-                    className={`${styles.servicesIcon} ${styles.whiteColor}`}
-                  />
+                  <div
+                    className={`${styles.dropBtn} ${styles.smallGap} ${styles.alignCenter}`}
+                  >
+                    <p className={`${styles.desktopServiceMenuServiceText} `}>
+                      Services
+                    </p>
+
+                    <FontAwesomeIcon
+                      icon={faChevronDown}
+                      className={`${styles.servicesIcon} ${styles.whiteColor} `}
+                    />
+                  </div>
+
+                  <div className={styles.dropdownContent}>
+                    <p onClick={goToForeignAccountPage}>Foreign Account</p>
+                  </div>
                 </div>
-                <p
-                  className={styles.desktopServiceMenuBlogText}
-                  onClick={goToForeignAccountPage}
-                >
-                  Blog
-                </p>
+                <p className={styles.desktopServiceMenuBlogText}>Blog</p>
                 <p className={styles.desktopServiceMenuHelpText}>Help Center</p>
               </div>
+
               <div className={styles.navButton}>
                 <button
                   className={`${styles.navButtonText} ${styles.whiteColor}`}
@@ -119,14 +125,12 @@ export default function transferCash() {
                 {isMenuOpen ? (
                   <FontAwesomeIcon
                     icon={faX}
-                    // id='navXIcon'
                     className={styles.navXicon}
                     onClick={handleNavXIcon}
                   />
                 ) : (
                   <FontAwesomeIcon
                     icon={faBars}
-                    // id='navBarIcon'
                     className={styles.navBarIcon}
                     onClick={handleNavBarIcon}
                   />
@@ -241,7 +245,7 @@ export default function transferCash() {
                 <p
                   className={`${styles.headerBottomLeftContainerText} ${styles.textAlign}`}
                 >
-                  Transaction Successful👍🏼
+                  Transaction Successful
                 </p>
 
                 <p
@@ -252,7 +256,7 @@ export default function transferCash() {
               </div>
 
               <Image
-                src='/Images/header-img.png'
+                src='/Images/header-img.svg'
                 width={300}
                 height={300}
                 className={styles.headerBottomImg}
@@ -377,7 +381,7 @@ export default function transferCash() {
               <Image
                 src='/Images/desktopCard.png'
                 width={150}
-                height={80}
+                height={90}
                 className={styles.desktopCard}
               />
             </div>
@@ -409,40 +413,18 @@ export default function transferCash() {
           </div>
 
           <div
-            className={`${styles.circleContainer} ${styles.justifyCenter} ${styles.fiftyVw}`}
+            className={`${styles.circleContainer} ${styles.justifyCenter} ${styles.desktopSectionOnefiftyVw}`}
           >
-            <div
-              className={`${styles.bigCircle} ${styles.justifyCenter} ${styles.alignCenter}`}
-            >
-              <div
-                className={`${styles.mediumCircle} ${styles.justifyCenter} ${styles.alignCenter}`}
-              >
-                <div className={styles.smallCircle}>
-                  <Image
-                    src='/Images/Us-Dollar.svg'
-                    width={40}
-                    height={40}
-                    className={styles.usDollarSvg}
-                  />
-                  <Image
-                    src='/Images/Euro-Icon.svg'
-                    width={35}
-                    height={35}
-                    className={styles.euroIconSvg}
-                  />
-                  <Image
-                    src='/Images/Pound-Icon.svg'
-                    width={30}
-                    height={30}
-                    className={styles.poundIconSvg}
-                  />
-                </div>
-              </div>
-            </div>
+            <Image
+              src='/Images/sectionOneCircleImg.svg'
+              width={100}
+              height={100}
+              className={styles.sectionOneCircleImg}
+            />
           </div>
 
           <div
-            className={`${styles.container3} ${styles.flexColumn} ${styles.fiftyVw}`}
+            className={`${styles.container3} ${styles.flexColumn} ${styles.desktopSectionOnefiftyVw}`}
           >
             <Image
               src='/Images/image2.svg'
@@ -457,6 +439,8 @@ export default function transferCash() {
               height={80}
               className={styles.checkmark}
             />
+
+            <div className={styles.container3Shadow}></div>
 
             <div
               className={`${styles.container3Elem1} ${styles.flexRow} ${styles.spaceBetween}`}
@@ -476,6 +460,7 @@ export default function transferCash() {
                 />
               </div>
             </div>
+
             <div
               className={`${styles.container3Elem2} ${styles.flexRow} ${styles.spaceBetween}`}
             >
@@ -493,6 +478,7 @@ export default function transferCash() {
                 />
               </div>
             </div>
+
             <div
               className={`${styles.container3Elem3} ${styles.flexRow} ${styles.spaceBetween}`}
             >
@@ -570,6 +556,13 @@ export default function transferCash() {
               </div>
             </div>
 
+            <Image
+              src='/Images/nLine.svg'
+              width={100}
+              height={50}
+              className={styles.nLine}
+            />
+
             <div
               className={`${styles.flexRow} ${styles.alignCenter} ${styles.oneRemGap} ${styles.desktopSectionTwoBottomFlexColumn}`}
             >
@@ -588,6 +581,13 @@ export default function transferCash() {
                 </p>
               </div>
             </div>
+
+            <Image
+              src='/Images/uLine.svg'
+              width={100}
+              height={50}
+              className={styles.uLine}
+            />
 
             <div
               className={`${styles.flexRow} ${styles.alignCenter} ${styles.oneRemGap} ${styles.desktopSectionTwoBottomFlexColumn}`}
