@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
 import Image from 'next/image'
 import styles from '../styles/transferCash.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -11,14 +10,9 @@ import {
   faInstagram,
   faFacebook,
 } from '@fortawesome/free-brands-svg-icons' // Import the Google Play icon
+import Link from 'next/link'
 
 export default function TransferCash() {
-  const router = useRouter()
-
-  const goToForeignAccountPage = () => {
-    router.push('/ForeignAccount')
-  }
-
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isMenuClosing, setIsMenuClosing] = useState(false) //state for closing animation
 
@@ -101,7 +95,9 @@ export default function TransferCash() {
                   </div>
 
                   <div className={styles.dropdownContent}>
-                    <p onClick={goToForeignAccountPage}>Foreign Account</p>
+                    <Link href='/ForeignAccount'>
+                      <p>Foreign Account</p>
+                    </Link>
                   </div>
                 </div>
                 <p className={styles.desktopServiceMenuBlogText}>Blog</p>
@@ -160,7 +156,7 @@ export default function TransferCash() {
                   </li>
                   <li
                     className={`${styles.mobileMenuBlogText}`}
-                    onClick={goToForeignAccountPage}
+                    // onClick={goToForeignAccountPage}
                   >
                     Blog
                   </li>
@@ -688,9 +684,7 @@ export default function TransferCash() {
             <div className={`${styles.footerTopGap} ${styles.flexColumn}`}>
               <div className={`${styles.blogGap} ${styles.flexRow}`}>
                 <h3 className={styles.h3}>How it Works</h3>
-                <h3 className={styles.h3} onClick={goToForeignAccountPage}>
-                  Blog
-                </h3>
+                <h3 className={styles.h3}>Blog</h3>
               </div>
 
               <h3 className={styles.h3}>FAQs & Help</h3>
@@ -811,9 +805,7 @@ export default function TransferCash() {
             <div
               className={`${styles.flexColumn} ${styles.desktopFooterColumntwentyFiveVw}`}
             >
-              <h3 className={styles.h3} onClick={goToForeignAccountPage}>
-                Blog
-              </h3>
+              <h3 className={styles.h3}>Blog</h3>
 
               <div className={`${styles.contactList} ${styles.flexColumn}`}>
                 <h3 className={styles.h3}>Contact</h3>

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
 import Image from 'next/image'
 import styles from '../styles/ForeignAccount.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -11,14 +10,9 @@ import {
   faInstagram,
   faFacebook,
 } from '@fortawesome/free-brands-svg-icons' // Import the Google Play icon
+import Link from 'next/link'
 
 export default function ForeignAccount() {
-  // navigating to transferCashPage
-  const router = useRouter()
-  const goToTransferCashPage = () => {
-    router.push('/')
-  }
-
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isMenuClosing, setIsMenuClosing] = useState(false) //state for closing animation
 
@@ -101,7 +95,9 @@ export default function ForeignAccount() {
                   </div>
 
                   <div className={styles.dropdownContent}>
-                    <p onClick={goToTransferCashPage}>Transfer Cash</p>
+                    <Link href='/'>
+                      <p>Transfer Cash</p>
+                    </Link>
                   </div>
                 </div>
                 <p className={styles.desktopServiceMenuBlogText}>Blog</p>
